@@ -46,7 +46,9 @@ Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c6
 
 ## Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](ttps://github.com/en-lofty/websocket-commands.git/tags). 
+We use [SemVer](http://semver.org/) for versioning. For the versions
+available, see the
+[tags on this repository](ttps://github.com/en-lofty/websocket-commands/tags).
 
 ## Authors
 
@@ -54,7 +56,7 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
   [GitHub page](https://github.com/en-lofty)
 
 See also the list of
-[contributors](https://github.com/en-lofty/websocket-commands.git/contributors)
+[contributors](https://github.com/en-lofty/websocket-commands/contributors)
 who participated in this project.
 
 ## License
