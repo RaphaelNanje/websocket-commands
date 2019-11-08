@@ -4,7 +4,7 @@ from typing import Dict
 command_functions: Dict[str, types.FunctionType] = dict()
 
 
-def function_command(type: str):
+def command(type: str):
     """
     This decorator registers any function that it is applied to as a command function.
     When commands are processed, if the type passed in the json matches the type added to the command,
@@ -26,3 +26,9 @@ def function_command(type: str):
         return func
 
     return register_command
+
+
+def command_handler(message: dict):
+    if 'type' in message:
+        if (type := message.get('type')) in command_functions:
+            command_functions.get(type)(message)
