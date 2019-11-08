@@ -33,12 +33,8 @@ cd websocket-commands
 pip install -e .
 ```
 
-End with an example of getting some data out of the system or using it for a little demo
-
-
-## Built With
-
-* [Example](http://example.com) - The web framework used
+End with an example of getting some data out of the system or using it
+for a little demo
 
 ## Contributing
 
@@ -52,7 +48,7 @@ available, see the
 
 ## Authors
 
-* **Raphael Nanje** - *Initial work* -
+* **Raphael Nanje** 
   [GitHub page](https://github.com/en-lofty)
 
 See also the list of
@@ -66,4 +62,8 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 ## Acknowledgments
 
 * Hat tip to anyone whose code was used
+
+## To-Do
+
+* Add support for decorated classes
 
