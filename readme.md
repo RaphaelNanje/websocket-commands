@@ -34,7 +34,11 @@ pip install -e .
 ```
 
 End with an example of getting some data out of the system or using it
-for a little demo
+for a little demo 
+
+## Examples
+
+[Examples](https://github.com/en-lofty/websocket-commands/tree/master/examples)
 
 ## Contributing
 
