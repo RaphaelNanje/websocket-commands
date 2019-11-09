@@ -1,10 +1,7 @@
 import inspect
 import re
 import types
-from typing import TYPE_CHECKING
-
-if TYPE_CHECKING:
-    from typing import Dict
+from typing import Dict
 
 pattern = r'(?P<command>\w+)_command'
 
