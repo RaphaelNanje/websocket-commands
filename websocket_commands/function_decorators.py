@@ -1,35 +1,38 @@
 import types
 from typing import Dict, Optional
 
-command_functions: Dict[str, types.FunctionType] = dict()
+categories: Dict[str, types.FunctionType] = dict()
 
 
-def command(type: str):
+def category(type: str):
     """
     This decorator registers any function that it is applied to as a command function.
-    When commands are processed, if the type passed in the json matches the type added to the command,
+    When commands are processed, if the type passed in the json matches the type argument,
     the matching function will be executed.
     Args:
         type: The 'topic' of the command sent. This will be used to identify which function should process a given command
     """
 
-    def register_command(func: types.FunctionType):
+    def register_category(func: types.FunctionType) -> types.FunctionType:
         """
-        This simply registers the command in the command_functions dictionary
+        This simply registers the category in the categories dictionary
         Args:
             func: The function that is being decorated.
-
-        Returns: The function itself.
-
         """
-        command_functions[type] = func
+        categories[type] = func
         return func
 
-    return register_command
+    return register_category
 
 
-def command_handler(message: dict, *args, **kwargs) -> Optional[object]:
-    if 'type' in message:
-        if (type := message.get('type')) in command_functions:
-            return command_functions.get(type)(message, *args, **kwargs)
+def message_handler(message: dict, *args, **kwargs) -> Optional[object]:
+    """
+    This automatically finds and executes the appropriate function that matches the "type" value in the message dict
+
+    Args:
+        message: The message passed from the websocket
+    """
+    if 'type' in message and (type := message.get('type')) in categories:
+        # noinspection PyUnboundLocalVariable
+        return categories.get(type)(message, *args, **kwargs)
     return None

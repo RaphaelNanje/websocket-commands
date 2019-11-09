@@ -1,5 +1,4 @@
-__version__ = "0.1.1"
+__version__ = "1.0.0"
 
-from .abstract_command import AbstractCommand, get_class_commands
-from .class_decorators import CommandClass
-from .function_decorators import command
+from .class_decorators import CategoryClass, category_classes, message_handler
+from .function_decorators import category, message_handler, categories

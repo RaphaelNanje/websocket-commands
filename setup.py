@@ -28,5 +28,5 @@ setup(
     author='raphael',
     author_email='rtnanje@gmail.com',
     description='A library that makes communicating between frontend and backend websockets simple.',
-    install_requires=['']
+    install_requires=['deprecation', ]
 )
