@@ -1,5 +1,5 @@
 import types
-from typing import Dict
+from typing import Dict, Optional
 
 command_functions: Dict[str, types.FunctionType] = dict()
 
@@ -28,7 +28,8 @@ def command(type: str):
     return register_command
 
 
-def command_handler(message: dict):
+def command_handler(message: dict, *args, **kwargs) -> Optional[object]:
     if 'type' in message:
         if (type := message.get('type')) in command_functions:
-            command_functions.get(type)(message)
+            return command_functions.get(type)(message, *args, **kwargs)
+    return None
