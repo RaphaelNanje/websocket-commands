@@ -38,7 +38,8 @@ def message_handler(message: dict, *args, **kwargs):
         return None
     # noinspection PyUnboundLocalVariable
     func = cls.command_functions[command]
-    return getattr(cls(), func.__name__)(message, *args, **kwargs)
+    instance = cls()
+    return getattr(instance, func.__name__)(message, *args, **kwargs)
 
 
 class CategoryClassInterface:
