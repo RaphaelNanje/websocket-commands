@@ -5,7 +5,8 @@ from websocket_commands.class_decorators import *
 @CategoryClass('rain')
 class Rain:
     def drop_command(self, message: dict):
-        print('drop', message)
+        print(self.__dict__)
+        print(f"The rain drops very {message.get('intensity')}")
 
     def evaporate_command(self, message: dict):
         print('evaporate', message)
@@ -20,10 +21,9 @@ class Test2Command:
 message_handler(dict(
     type='rain',
     command='drop',
-    message='Rain has dropped'
+        intensity='hard'
 ))
 message_handler(dict(
     type='rain',
     command='evaporate',
-    message='Rain has evaporated'
 ))

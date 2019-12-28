@@ -17,16 +17,18 @@ def readall(*args):
 
 
 metadata = dict(
-    re.findall(r"""__([a-z]+)__ = "([^"]+)""", readall("websocket_commands", "__init__.py"))
+        re.findall(r"""__([a-z]+)__ = "([^"]+)""",
+                   readall("websocket_commands", "__init__.py"))
 )
 setup(
-    name='websocket-commands',
-    version=metadata['version'],
-    packages=['websocket_commands'],
-    url='http://github.com/en-lofty/websocket-commands.git',
-    license='',
-    author='raphael',
-    author_email='rtnanje@gmail.com',
-    description='A library that makes communicating between frontend and backend websockets simple.',
-    install_requires=['deprecation', ]
+        name='websocket-commands',
+        version=metadata['version'],
+        packages=['websocket_commands'],
+        url='http://github.com/en-lofty/websocket-commands.git',
+        license='',
+        author='raphael',
+        author_email='rtnanje@gmail.com',
+        description='A library that makes communicating between frontend and '
+                    'backend websockets simple.',
+        install_requires=['deprecation', ]
 )
